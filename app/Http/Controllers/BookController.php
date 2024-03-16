@@ -28,6 +28,10 @@ class BookController extends Controller
             default => $books->latest()->withAvgRating()->withReviewsCount()
         };
 
+        /** @var Added the Caching Mechanisim to
+         * remever books filer key and tile $cacheKey
+         * This data is cached is 60 mins
+         */
         $cacheKey = 'books:' . $filter . ':' . $title;
         $books =
             cache()->remember(

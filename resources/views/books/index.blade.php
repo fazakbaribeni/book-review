@@ -39,13 +39,15 @@
                         <div class="w-full flex-grow sm:w-auto">
                             <a href="{{ route('books.show', $book) }}" class="book-title">{{ $book->title }}</a>
                             <span class="book-author">by {{ $book->author }}</span>
+                            <span>Published On: {{  \Carbon\Carbon::createFromFormat('Y-m-d', $book->published_date)->format("d/m/Y") }}</span>
                         </div>
                         <div>
                             <div class="book-rating">
+                                <!-- Show the Rating Star Component-->
                                 <x-star-rating :rating="$book->reviews_avg_rating" />
                             </div>
                             <div class="book-review-count">
-                                out of {{ $book->reviews_count }} {{ Str::plural('review', $book->reviews_count) }}
+                                out of {{ $book->reviews_count }} {{ \Illuminate\Support\Str::plural('review', $book->reviews_count) }}
                             </div>
                         </div>
                     </div>
