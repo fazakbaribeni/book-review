@@ -29,7 +29,7 @@
         }
 
         .book-item {
-            @apply text-sm rounded-md bg-white p-4 leading-6 text-slate-900 shadow-md shadow-black/5 ring-1 ring-slate-700/10;
+            @apply text-sm rounded-md bg-slate-300 p-4 leading-6 text-slate-900 shadow-md shadow-black/5 ring-1 ring-slate-700/10;
         }
 
         .book-title {
